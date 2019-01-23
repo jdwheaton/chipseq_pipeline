@@ -10,6 +10,7 @@ ALL_BAMCOV = expand("results/{sample}.dedup.masked.rpkm.bw", sample=SAMPLES)
 rule all:
     input:
         ALL_FASTQC + ALL_BAMCOV
+
 rule fastqc:
     input:
         "raw_data/{sample}_R1.fastq.gz",
@@ -112,7 +113,6 @@ rule samtools_index:
         "shub://jdwheaton/singularity-ngs:latest"
     shell:
         "samtools index {input} {output} &> {log}"
-
 
 rule bam_coverage:
     input:
