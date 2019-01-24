@@ -55,7 +55,7 @@ rule bowtie_align:
     singularity:
         "shub://jdwheaton/singularity-ngs:latest"
     shell:
-        "bowtie2 --very-sensitive --no-unal -p {threads} -x {GENOMEINDEX} -1 {input.READ1} -2 {input.READ2} 2> {log} | samtools view -bS -o {output}"
+        "bowtie2 --very-sensitive --no-unal -p {threads} -x {BT2INDEX} -1 {input.READ1} -2 {input.READ2} 2> {log} | samtools view -bS -o {output}"
 
 rule samtools_sort:
     input:
