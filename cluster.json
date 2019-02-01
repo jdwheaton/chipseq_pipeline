@@ -4,8 +4,8 @@
         "time" : "00:45:00",
         "partition" : "scavenger",
         "mem" : "8G",
-        "output" : "logs/cluster/{rule}.{wildcards}.out",
-        "error" : "logs/cluster/{rule}.{wildcards}.err",
+        "output" : "logs/slurm/output/{rule}.{wildcards}.out",
+        "error" : "logs/slurm/error/{rule}.{wildcards}.err",
         "extra" : ""
     },
     "trim_galore" :
