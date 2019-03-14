@@ -129,7 +129,7 @@ rule bam_coverage:
             bamCoverage -p {threads} -b {input.BAM} -o {output} \
                 --binSize 10 \
                 --normalizeUsing RPKM \
-                --ignoreForNormalization chrX \
+                --ignoreForNormalization chrX chrY chrM\
                 --samFlagExclude 1024 \
                 --extendReads \
                 &> {log}

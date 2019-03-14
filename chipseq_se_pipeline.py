@@ -120,11 +120,9 @@ rule bam_coverage:
     log:
         "logs/{sample}_bamcoverage.log"
     shell:
-        """
-        bamCoverage -p {threads} -b {input.BAM} -o {output} \
+        "bamCoverage -p {threads} -b {input.BAM} -o {output} \
             --binSize 10 \
             --normalizeUsing RPKM \
             --ignoreForNormalization chrX chrY chrM \
             --samFlagExclude 1024 \
-            &> {log}
-        """
+            &> {log}"
